@@ -14,8 +14,14 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "font-awesome";
 
 .cant-see-me {
   display: none;
+}
+
+body {
+  background-color: #d3d3d3;
+}
+.small-text {
+  font-size: 11px;
 }

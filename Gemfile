@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'font-awesome-rails'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -45,5 +44,9 @@ group :development do
   gem 'better_errors'
 end
 
+group :production do 
+  gem 'rails_12factor'
+  gem 'pg'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

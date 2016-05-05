@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  #root 'epicenter#feed'
+  
   root 'tweets#index'
-
+  
+  #get 'epicenter#feed'
+  
   get 'feed' => 'epicenter#feed'
   
   get 'user_profile' => 'epicenter#show_user'
@@ -14,7 +16,10 @@ Rails.application.routes.draw do
   
   get 'contact' => 'welcome#contact'
 
+  get 'js_practice' => 'epicenter#js_practice'
+
   resources :tweets
+  resources :account_activations, only: [:edit]
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

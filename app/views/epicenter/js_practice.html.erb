@@ -1,0 +1,57 @@
+<script>
+
+function showMe() {
+
+    document.getElementById("peek").innerHTML = "Here I am!";
+  }
+function addItUp() {
+  var sum = 2 + 2; 
+  return sum;
+}
+
+function answerMe() {
+  document.getElementById("HTML").innerHTML = "Hypertext Markup Language";
+}
+
+function display() {
+  document.getElementById("CSS").innerHTML = "Cascading Stylesheets";
+}
+
+$(document).ready(function(){
+  $("#celebrate").click(function(){
+    $(".hiphop").html("HOORAY");
+  });
+});
+
+$(document).ready(funciton(){
+  $("#changestyles").click(funciton(){
+    $("#nowred").css({"color":"red"});
+    $("#nowblue").addClass("blue");
+    $("#wasgray").removeClass("gray");
+  });
+});
+
+</script>
+
+
+<p id = "peek"> Where is that guy? </p>
+<button type="button" onclick="showMe()"> Look! </button>
+
+<p id = "2 + 2"> What is 2 + 2 equal to ? </p>
+<button type="button" onclick="addItUp()"> Answer </button>
+
+<p id = "HTML"> What does HTML stand for? </p>
+<button type="button" onclick="answerMe()"> Answer </button>
+
+<p id = "CSS"> What does CSS stand for? </p>
+<button type="button" onclick="display()"> Answer </button>
+
+<p class="hiphop">Yay? </p>
+<p class="hiphip">Super-duper?</p>
+<button id="celebrate">Get excited!</button>
+
+<p id="nowred">This text will be red.</p>
+<p id="nowblue">This text will be blue.</p>
+<p id="wasgray" class="gray">This text was gray.</p>
+<button id="changestyles">Change the Styles</button>
+

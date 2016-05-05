@@ -7,5 +7,15 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
   serialize :following, Array
+  serialize :follower, Array
 
+  before_create :create_activation
+  attr_accessor :remember_token, :activation_token
+end
+
+private
+
+def create_activation
+  self.activation_token = User.new_token
+  self.activation = User.digest(activation_token)
 end

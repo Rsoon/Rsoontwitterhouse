@@ -1,12 +1,11 @@
-<h2>Resend unlock instructions</h2>
+/** #<h2>Resend unlock instructions</h2>
+#<%= form_for(resource, as: resource_name, url: unlock_path(#resource_name), html: { method: :post }) do |f| %>
+#  <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+ # <div class="field">
+  #  <%= f.label :email %><br />
+  #  <%= f.email_field :email, autofocus: true %>
+  #</div>
 
   <div class="actions">
     <%= f.submit "Resend unlock instructions" %>
@@ -14,3 +13,12 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+**/
+
+<p>Hello <%= @resource.email %>!</p>
+
+<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+
+<p>Click the link below to unlock your account:</p>
+
+<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
